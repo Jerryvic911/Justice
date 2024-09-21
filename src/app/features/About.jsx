@@ -1,0 +1,13 @@
+import React from 'react'
+
+function About() {
+  return (
+    <div className='text-white'>
+      <div>
+        hello
+      </div>
+    </div>
+  )
+}
+
+export default About
