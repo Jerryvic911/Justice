@@ -12,9 +12,13 @@ const PaystackButton = dynamic(
 const Donate = () => {
   const publicKey = "pk_test_e66822d2e3553a1dd1143d6dbcb609e62dbab7ac"; // Replace with your actual public key
   const [customAmount, setCustomAmount] = useState("");
+  const [donationCount, setDonationCount] = useState(0);
+  const [totalDonated, setTotalDonated] = useState(0); // Total donated amount
 
-  const handleSuccess = () => {
+  const handleSuccess = (amount) => {
     alert("Thanks for donation!");
+    setDonationCount((prevCount) => prevCount + 1); // Increment donation count
+    setTotalDonated((prevTotal) => prevTotal + amount); // Accumulate donation amount
   };
 
   const handleClose = () => {
@@ -32,7 +36,7 @@ const Donate = () => {
   return (
     <div className="px-4">
       <div>
-        <Navbar/>
+        <Navbar />
       </div>
       <h1 className="text-center text-[25px] my-4 font-[600]">
         Make your payment here
@@ -51,7 +55,7 @@ const Donate = () => {
           publicKey={publicKey}
           text="Donate"
           email="Jeremiahv791@gmail.com" // Replace with a valid email address
-          onSuccess={handleSuccess}
+          onSuccess={() => handleSuccess(Number(customAmount))} // Pass the custom amount to handleSuccess
           onClose={handleClose}
         />
 
@@ -63,10 +67,20 @@ const Donate = () => {
             publicKey={publicKey}
             text={`Donate NGN ${amount}`}
             email="Jeremiahv791@gmail.com" // Replace with a valid email address
-            onSuccess={handleSuccess}
+            onSuccess={() => handleSuccess(amount)} // Pass the preset amount to handleSuccess
             onClose={handleClose}
           />
         ))}
+
+        {/* Display the donation count and total donated */}
+        <div className="mt-4 text-center">
+          <p>
+            <strong>Total Donations:</strong> {donationCount}
+          </p>
+          <p>
+            <strong>Total Amount Donated:</strong> NGN {totalDonated}
+          </p>
+        </div>
       </div>
     </div>
   );
