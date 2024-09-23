@@ -106,6 +106,11 @@ function Navbar() {
                 </Link>
               </li>
               <li>
+                <Link href="/Events" className="hover:underline">
+                  Events
+                </Link>
+              </li>
+              <li>
                 <Link href="/Chatbot" className="hover:underline flex items-center">
                   <svg
                     className="w-5 h-5 mr-1"
