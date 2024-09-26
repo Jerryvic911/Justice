@@ -32,7 +32,7 @@ function Navbar() {
   return (
     <div>
       {/* Navbar Section */}
-      <div className="pt-2 pb-3 top-0 w-full h-[4rem] bg-white shadow-lg">
+      <div className="pt-2 pb-3 top-0 w-full h-[4rem] bg-white shadow-lg sticky">
         <header className="flex justify-between items-center px-6 md:px-[7vh] py-2">
           {/* Left section: Logo */}
           <div className="flex items-center gap-2">
@@ -97,7 +97,7 @@ function Navbar() {
                   About
                 </Link>
               </li>
-              <li>
+              <li className="pt-2 hover:underline">
                 <BasicMenu />
               </li>
               <li>

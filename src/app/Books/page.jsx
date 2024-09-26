@@ -9,7 +9,7 @@ export default function BooksPage() {
   const router = useRouter();
 
   return (
-    <div className="p-8">
+    <div className="">
       <Navbar />
       <h1 className="text-4xl font-bold mb-6">Books List</h1>
       <ul className="space-y-6">

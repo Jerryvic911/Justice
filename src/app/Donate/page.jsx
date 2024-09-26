@@ -12,8 +12,7 @@ const PaystackButton = dynamic(
 const Donate = () => {
   const publicKey = "pk_test_e66822d2e3553a1dd1143d6dbcb609e62dbab7ac"; // Replace with your actual public key
   const [customAmount, setCustomAmount] = useState("");
-  const [donationCount, setDonationCount] = useState(0);
-  const [totalDonated, setTotalDonated] = useState(0); // Total donated amount
+   // Total donated amount
 
   const handleSuccess = (amount) => {
     alert("Thanks for donation!");
@@ -73,14 +72,7 @@ const Donate = () => {
         ))}
 
         {/* Display the donation count and total donated */}
-        <div className="mt-4 text-center">
-          <p>
-            <strong>Total Donations:</strong> {donationCount}
-          </p>
-          <p>
-            <strong>Total Amount Donated:</strong> NGN {totalDonated}
-          </p>
-        </div>
+      
       </div>
     </div>
   );

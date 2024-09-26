@@ -9,7 +9,7 @@ function Body() {
   return (
     <div>
       <div className="bg-[#f4fcfe] min-h-screen">
-        <div>
+        <div className=" sticky">
           <Navbar />
         </div>
 
