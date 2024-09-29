@@ -63,11 +63,13 @@ Ensure that you have Node.js installed on your system. You can install it from [
 
    ```bash
    git clone https://github.com/Jerryvic911/Justice.git
+   ```
 
 2. Navigate to the project directory:
 
     ```bash
     cd Justice
+    ```
 
 3. Install dependencies:
 
@@ -79,6 +81,7 @@ Ensure that you have Node.js installed on your system. You can install it from [
     pnpm install
     # or
     bun install
+    ```
 
 ### Running the Development Server
 
@@ -92,6 +95,7 @@ Ensure that you have Node.js installed on your system. You can install it from [
     pnpm dev
     # or
     bun dev
+    ```
 
 - Once the server is running, open http://localhost:3000 in your browser to view the application.
 
