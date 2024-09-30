@@ -59,8 +59,8 @@ function Navbar() {
   return (
     <>
       {/* Navbar Section */}
-      <header className='flex flex-col px-2 py-4 shadow-lg md:flex-row md:justify-between md:px-6'>
-        <div className='flex w-full items-center justify-between md:w-fit md:justify-start'>
+      <nav className='flex flex-col px-2 py-4 shadow-lg md:flex-row md:justify-between md:px-6'>
+        <div className='flex w-full items-center justify-between md:w-1/4 md:justify-start'>
           {/* Logo */}
           <Link href='/'>
             <svg
@@ -111,7 +111,7 @@ function Navbar() {
 
         {/* Links */}
         <ul
-          className={`${isOpen ? 'flex' : 'hidden'} flex-col items-center gap-4 py-4 text-lg font-medium md:flex md:flex-row md:py-0`}
+          className={`${isOpen ? 'flex' : 'hidden'} flex-col items-center justify-around gap-4 py-4 text-lg font-medium md:flex md:w-1/3 md:flex-row md:py-0`}
         >
           {links.map((link) => (
             <li
@@ -145,7 +145,19 @@ function Navbar() {
                 </Link>
               </li> */}
         </ul>
-      </header>
+
+        {/* Donate Button */}
+        <div
+          className={`${isOpen ? 'flex' : 'hidden'} w-full items-center justify-center md:flex md:w-1/4`}
+        >
+          <Link
+            href='/donate'
+            className='flex h-[40px] w-[60%] items-center justify-center rounded-lg border border-solid border-blue-500 bg-blue-500 text-white transition-colors ease-in-out md:w-1/3 md:bg-transparent md:text-black md:hover:bg-blue-500 md:hover:text-white'
+          >
+            Donate
+          </Link>
+        </div>
+      </nav>
 
       {/* Scroll-to-Top Button */}
       {showButton && (

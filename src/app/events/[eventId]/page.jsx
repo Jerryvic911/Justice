@@ -1,26 +1,24 @@
-"use client";
+'use client';
 import { useState } from 'react';
-import Navbar from "../../components/Navbar";
 import eventData from '../../../data/events.data.json';
-import Donation from "../../Donate/Donation"
+import Donation from '../../donate/Donation';
 
-
-export default function BookDetails({ params }) {
+export default function EventDetails({ params }) {
   const [event] = useState(() => {
-    return eventData.find(event => event.id === Number(params.eventId))
+    return eventData.find((event) => event.id === Number(params.eventId));
   });
 
   return (
-    <main className="p-8 h-fit">
-      <Navbar />
+    <main className='h-fit p-8'>
       <section>
-        <h1 className='mb-6 font-bold text-3xl text-gray-800'>{event.title}</h1>
-      
-        <p className='tracking-wider'>{event.description} <br />
-      </p>
+        <h1 className='mb-6 text-3xl font-bold text-gray-800'>{event.title}</h1>
+
+        <p className='tracking-wider'>
+          {event.description} <br />
+        </p>
       </section>
       <div>
-      <Donation/>
+        <Donation />
       </div>
     </main>
   );
