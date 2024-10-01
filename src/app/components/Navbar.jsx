@@ -59,7 +59,7 @@ function Navbar() {
   return (
     <>
       {/* Navbar Section */}
-      <nav className='flex flex-col px-2 py-4 shadow-lg md:flex-row md:justify-between md:px-6'>
+      <nav className='mb-1 flex flex-col px-2 py-4 shadow md:flex-row md:justify-between md:px-6'>
         <div className='flex w-full items-center justify-between md:w-1/4 md:justify-start'>
           {/* Logo */}
           <Link href='/'>
