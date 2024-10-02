@@ -1,7 +1,6 @@
-"use client";
-import { useState } from "react";
-import Navbar from "../../components/Navbar";
-import booksData from "../../../data/books.data.json";
+'use client';
+import { useState } from 'react';
+import booksData from '../../../data/books.data.json';
 
 export default function BookDetails({ params }) {
   const [book] = useState(() => {
@@ -10,14 +9,13 @@ export default function BookDetails({ params }) {
   });
 
   return (
-    <main className="">
-      <Navbar />
+    <main className=''>
       <section>
-        <h1 className="mb-6 font-bold text-3xl text-gray-800">{book.title}</h1>
-        <span className="inline-block mb-6 font-light italic capitalize">
+        <h1 className='mb-6 text-3xl font-bold text-gray-800'>{book.title}</h1>
+        <span className='mb-6 inline-block font-light capitalize italic'>
           {book.author}
         </span>
-        <p className="tracking-wider">
+        <p className='tracking-wider'>
           {book.description} <br />
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
           elit quis sapien pharetra eleifend in vitae libero. Nulla et blandit

@@ -1,8 +1,35 @@
-/* eslint-disable react/no-unescaped-entities */
-"use client"
-import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import BasicMenu from "./Menu";
+'use client';
+import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+// import BasicMenu from './Menu';
+
+const links = [
+  {
+    id: 1,
+    url: '/',
+    name: 'home',
+  },
+  {
+    id: 2,
+    url: '/about',
+    name: 'about',
+  },
+  {
+    id: 3,
+    url: '/books',
+    name: 'books',
+  },
+  {
+    id: 4,
+    url: '/events',
+    name: 'events',
+  },
+  {
+    id: 5,
+    url: '/contact',
+    name: 'contact',
+  },
+];
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +37,7 @@ function Navbar() {
 
   // Scroll to top function
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Show button when user scrolls down
@@ -23,123 +50,125 @@ function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
-    <div>
+    <>
       {/* Navbar Section */}
-      <div className="pt-2 pb-3 top-0 w-full h-[4rem] bg-white shadow-lg sticky">
-        <header className="flex justify-between items-center px-6 md:px-[7vh] py-2">
-          {/* Left section: Logo */}
-          <div className="flex items-center gap-2">
+      <nav className='mb-1 flex flex-col px-2 py-4 shadow md:flex-row md:justify-between md:px-6'>
+        <div className='flex w-full items-center justify-between md:w-1/4 md:justify-start'>
+          {/* Logo */}
+          <Link href='/'>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke=" #3b82f6"
-              className="w-8 h-8"
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth='1.5'
+              // stroke='#3b82f6'
+              className='inline-block h-8 w-8 -translate-y-1'
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill=" #3b82f6"
-                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                fill='#3b82f6'
+                className='w-full object-cover'
+                d='M12.356 3.066a1 1 0 0 0-.712 0l-7 2.666A1 1 0 0 0 4 6.68a17.695 17.695 0 0 0 2.022 7.98 17.405 17.405 0 0 0 5.403 6.158 1 1 0 0 0 1.15 0 17.406 17.406 0 0 0 5.402-6.157A17.694 17.694 0 0 0 20 6.68a1 1 0 0 0-.644-.949l-7-2.666Z'
               />
             </svg>
-            <Link href="/">
-              <h1 className="font-light text-[22px] md:text-[25px]">Youth's Safe Space</h1>
-            </Link>
-          </div>
+            <h1 className='inline-block text-[22px] font-medium md:text-[25px]'>
+              Kirki
+            </h1>
+          </Link>
 
-          {/* Right section: Links and Hamburger */}
-          <div className="md:hidden">
-            {/* Hamburger Icon */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-blue-500 focus:outline-none"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
-                />
-              </svg>
-            </button>
-          </div>
+          {/* Hamburger Icon - only displays on small screens
 
-          {/* Links */}
-          <nav
-            className={`${
-              isOpen ? "block" : "hidden"
-            } absolute top-[4rem] left-0 w-full bg-white md:block md:static md:w-auto`}
+          I nested it within the div to make it much easier to style
+          */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className='text-blue-500 focus:outline-none md:hidden'
           >
-            <ul className="flex flex-col md:flex-row items-center gap-4 font-medium text-lg py-4 md:py-0">
-              <li>
-                <Link href="/" className="hover:underline">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:underline">
-                  About
-                </Link>
-              </li>
-              <li className="pt-2 hover:underline">
-                <BasicMenu />
-              </li>
-              <li>
-                <Link href="/Donate" className="hover:underline">
-                  Donate
-                </Link>
-              </li>
-              <li>
-                <Link href="/Events" className="hover:underline">
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link href="/Chatbot" className="hover:underline flex items-center">
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-6 w-6'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+              strokeWidth='2'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'}
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Links */}
+        <ul
+          className={`${isOpen ? 'flex' : 'hidden'} flex-col items-center justify-around gap-4 py-4 text-lg font-medium md:flex md:w-1/3 md:flex-row md:py-0`}
+        >
+          {links.map((link) => (
+            <li
+              key={link.id}
+              className='capitalize tracking-wide transition-all delay-700 hover:underline'
+            >
+              <Link href={link.url}>{link.name}</Link>
+            </li>
+          ))}
+
+          {/**CHATBOT LINK
+
+              TODO: Remove it from Navbar and place it as a hover button on the main page.
+               */}
+          {/* <li>
+                <Link
+                  href='/Chatbot'
+                  className='flex items-center hover:underline'
+                >
                   <svg
-                    className="w-5 h-5 mr-1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 640 512"
+                    className='mr-1 h-5 w-5'
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 640 512'
                   >
                     <path
-                      fill="#3b82f6"
-                      d="M320 0c17.7 0 32 14.3 32 32l0 64 120 0c39.8 0 72 32.2 72 72l0 272c0 39.8-32.2 72-72 72l-304 0c-39.8 0-72-32.2-72-72l0-272c0-39.8 32.2-72 72-72l120 0 0-64c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224l16 0 0 192-16 0c-26.5 0-48-21.5-48-48l0-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-16 0 0-192 16 0z"
+                      fill='#3b82f6'
+                      d='M320 0c17.7 0 32 14.3 32 32l0 64 120 0c39.8 0 72 32.2 72 72l0 272c0 39.8-32.2 72-72 72l-304 0c-39.8 0-72-32.2-72-72l0-272c0-39.8 32.2-72 72-72l120 0 0-64c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224l16 0 0 192-16 0c-26.5 0-48-21.5-48-48l0-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-16 0 0-192 16 0z'
                     />
                   </svg>
                   Chatbot
                 </Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-      </div>
+              </li> */}
+        </ul>
+
+        {/* Donate Button */}
+        <div
+          className={`${isOpen ? 'flex' : 'hidden'} w-full items-center justify-center md:flex md:w-1/4`}
+        >
+          <Link
+            href='/donate'
+            className='flex h-[40px] w-[60%] items-center justify-center rounded-lg border border-solid border-blue-500 bg-blue-500 text-white transition-colors ease-in-out md:w-1/3 md:bg-transparent md:text-black md:hover:bg-blue-500 md:hover:text-white'
+          >
+            Donate
+          </Link>
+        </div>
+      </nav>
 
       {/* Scroll-to-Top Button */}
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
+          className='fixed bottom-5 right-5 z-10 rounded-full bg-blue-500 p-3 text-white shadow-lg transition duration-300 hover:bg-blue-600'
         >
           ↑ Top
         </button>
       )}
-    </div>
+    </>
   );
 }
 
