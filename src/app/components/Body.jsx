@@ -21,7 +21,7 @@ function Body() {
             </h3>
             <p className="font-bold text-[40px] md:text-[50px] lg:text-[60px] leading-snug">
               Build a world where <br />{" "}
-              <span className="relative bottom-2 md:bottom-4 lg:bottom-8 text-blue-500">
+              <span className=" bottom-2 md:bottom-4 lg:bottom-8 text-blue-500">
                 all youth are safe
               </span>
             </p>
