@@ -29,6 +29,11 @@ const links = [
     url: '/contact',
     name: 'contact',
   },
+  {
+    id: 5,
+    url: '/Map',
+    name: 'Map',
+  },
 ];
 
 function Navbar() {
@@ -111,7 +116,7 @@ function Navbar() {
 
         {/* Links */}
         <ul
-          className={`${isOpen ? 'flex' : 'hidden'} flex-col items-center justify-around gap-4 py-4 text-lg font-medium md:flex md:w-1/3 md:flex-row md:py-0`}
+          className={`${isOpen ? 'flex' : 'hidden'} flex-col items-center justify-around gap-7 py-4 text-lg font-medium md:flex md:w-1/3 md:flex-row md:py-0`}
         >
           {links.map((link) => (
             <li
@@ -152,7 +157,7 @@ function Navbar() {
         >
           <Link
             href='/donate'
-            className='flex h-[40px] w-[60%] items-center justify-center rounded-lg border border-solid border-blue-500 bg-blue-500 text-white transition-colors ease-in-out md:w-1/3 md:bg-transparent md:text-black md:hover:bg-blue-500 md:hover:text-white'
+            className='flex h-[40px] w-[60%] items-center justify-center rounded-full border border-solid border-blue-500 bg-blue-500 text-white transition-colors ease-in-out md:w-1/3 md:bg-transparent md:text-black md:hover:bg-blue-500 md:hover:text-white'
           >
             Donate
           </Link>
@@ -165,7 +170,7 @@ function Navbar() {
           onClick={scrollToTop}
           className='fixed bottom-5 right-5 z-10 rounded-full bg-blue-500 p-3 text-white shadow-lg transition duration-300 hover:bg-blue-600'
         >
-          ↑ Top
+          ↑Top
         </button>
       )}
     </>

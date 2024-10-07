@@ -58,18 +58,16 @@ export default function About() {
         </h3>
         <ul>
           {instructions.map((instruction) => (
-            <>
-              <li
-                key={instruction.id}
-                className='py-2 text-xs font-extralight lowercase tracking-tight text-gray-500 md:text-sm'
-              >
-                <span className='font-semibold capitalize'>
-                  {instruction.title}:
-                </span>{' '}
-                {instruction.body}
-              </li>
+            <li
+              key={instruction.id}
+              className='py-2 text-xs font-extralight lowercase tracking-tight text-gray-500 md:text-sm'
+            >
+              <span className='font-semibold capitalize'>
+                {instruction.title}:
+              </span>{' '}
+              {instruction.body}
               <hr />
-            </>
+            </li>
           ))}
         </ul>
       </section>

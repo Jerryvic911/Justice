@@ -9,7 +9,7 @@ const PaystackButton = dynamic(
 );
 
 const Donate = () => {
-  const publicKey = 'pk_test_e66822d2e3553a1dd1143d6dbcb609e62dbab7ac'; // Replace with your actual public key
+  const publicKey = 'pk_test_e66822d2e3553a1dd1143d6dbcb609e62dbab7ac';
   const [customAmount, setCustomAmount] = useState('');
   // Total donated amount
 
