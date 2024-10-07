@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Update from "./skills-and-updates";
+
 
 const Work = () => {
   return (
@@ -48,6 +50,10 @@ const Work = () => {
                 </h2>
               </li>
             </ul>
+          </div>
+
+          <div className="mt-20">
+            <Update/>
           </div>
         </div>
       </div>
