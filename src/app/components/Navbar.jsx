@@ -30,9 +30,9 @@ const links = [
     name: 'contact',
   },
   {
-    id: 5,
-    url: '/Map',
-    name: 'Map',
+    id: 6,
+    url: '/map',
+    name: 'map',
   },
 ];
 
