@@ -157,7 +157,7 @@ function Navbar() {
         >
           <Link
             href='/donate'
-            className='flex h-[40px] w-[60%] items-center justify-center rounded-full border border-solid border-blue-500 bg-blue-500 text-white transition-colors ease-in-out md:w-1/3 md:bg-transparent md:text-black md:hover:bg-blue-500 md:hover:text-white'
+            className='flex h-[40px] w-[60%] items-center justify-center rounded-full border border-solid border-black bg-[#B8F171] text-black transition-colors ease-in-out md:w-1/3 md:bg-transparent md:text-black md:hover:bg-[#B8F171] md:hover:text-black'
           >
             Donate
           </Link>

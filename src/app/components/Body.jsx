@@ -19,7 +19,7 @@ function Body() {
         <div className='px-6 py-10'>
 
           {/* Left Section */}
-          <div className='ml-10'>
+          <div className='ml-3 md:ml-10'>
             <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-snug lg:leading-normal">
               Addressing Gender-Based Violence <br /> and Insecurity in Kaduna State.
             </h1>

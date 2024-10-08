@@ -22,15 +22,14 @@ const instructions = [
 
 export default function About() {
   return (
-    <main className='mx-auto w-full px-1 md:w-[60%] md:px-0'>
-      <section className='my-4 px-2'>
+    <main className='mx-4 mt-10 max-w-7xl sm:mx-6 lg:mx-[100px]'>
+      <section className='my-4'>
         <div>
-          <h1 className='text-lg font-bold capitalize tracking-wider md:text-2xl md:tracking-widest'>
+          <h1 className='text-4xl font-semibold leading-tight capitalize'>
             about us
           </h1>
-          <span className='font-lighter text-xs font-extralight capitalize tracking-tight text-gray-500 md:text-sm'>
-            Get in Touch we are Here to Listen, Help, and Support — Reach Out
-            Today.
+          <span className='font-light text-lg leading-relaxed'>
+            Get in Touch we are Here to Listen, Help, and Support — Reach Out Today.
           </span>
         </div>
         <Image
@@ -39,11 +38,11 @@ export default function About() {
           className='h-auto w-full object-contain md:h-[400px]'
         />
       </section>
-      <section className='my-4 px-2'>
-        <h3 className='text-md font-semibold capitalize tracking-wide md:text-xl'>
+      <section className='my-4'>
+        <h3 className='text-3xl font-semibold leading-tight capitalize pb-7'>
           our mission
         </h3>
-        <p className='text-xs font-extralight tracking-tight text-gray-500 md:text-sm'>
+        <p className='text-lg font-medium leading-relaxed pb-10'>
           Our mission at Kirki is to empower individuals and communities in
           Kaduna State by providing accessible tools and resources to prevent,
           report, and resolve cases of gender-based violence, crime, and
@@ -52,20 +51,14 @@ export default function About() {
           culture of safety and justice.
         </p>
       </section>
-      <section className='my-4 px-2'>
-        <h3 className='text-md font-semibold capitalize tracking-wide md:text-xl'>
+      <section className='my-4'>
+        <h3 className='text-3xl font-semibold capitalize pb-5'>
           how it works
         </h3>
-        <ul>
+        <ul className='space-y-4 pb-9'>
           {instructions.map((instruction) => (
-            <li
-              key={instruction.id}
-              className='py-2 text-xs font-extralight lowercase tracking-tight text-gray-500 md:text-sm'
-            >
-              <span className='font-semibold capitalize'>
-                {instruction.title}:
-              </span>{' '}
-              {instruction.body}
+            <li key={instruction.id} className='py-2 text-lg font-medium'>
+              <span className='font-bold capitalize'>{instruction.title}:</span> {instruction.body}
               <hr />
             </li>
           ))}
