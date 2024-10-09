@@ -15,7 +15,7 @@ export default function Events() {
           <li
             key={event.id}
             className='rounded-lg border p-4 shadow-md'
-            onClick={() => router.push(`/Events/${event.id}`)}
+            onClick={() => router.push(`/events/${event.id}`)}
           >
             <h2 className='mb-2 text-2xl font-semibold'>{event.title}</h2>
             <p className='mt-2'>{event.description}</p>
