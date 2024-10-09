@@ -61,8 +61,8 @@ export default function MapsMain() {
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      <MapContainer center={[10.5105, 7.4165]} zoom={12} style={{ height: "400px", width: "600px" }}>
+    <div className="relative w-full  mx-auto"> {/* Responsive container */}
+      <MapContainer center={[10.5105, 7.4165]} zoom={12} style={{ height: "400px", width: "100%" }}>
         <TileLayer
           attribution="Google Maps"
           url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
@@ -79,22 +79,15 @@ export default function MapsMain() {
       </MapContainer>
 
       {/* SOS Button */}
-      <button 
-        onClick={handleSosClick}
-        style={{
-          position: 'absolute',
-          bottom: '20px',
-          right: '20px',
-          padding: '10px 20px',
-          backgroundColor: 'red',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer',
-        }}
-      >
-        SOS
-      </button>
+      <div className="grid grid-cols-1 md:gap-[35rem] md:flex mt-5">
+        <h2 className="text-center font-[500] text-[20px] mb-2">For emergency, please click the SOS button</h2>
+        <button 
+          onClick={handleSosClick}
+          className="bg-red-600 text-center md:w-[200px] text-white py-2 px-9 rounded-full focus:outline-none hover:bg-red-700"
+        >
+          SOS
+        </button>
+      </div>
     </div>
   );
 }
