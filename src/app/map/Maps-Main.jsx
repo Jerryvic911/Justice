@@ -79,8 +79,8 @@ export default function MapsMain() {
       </MapContainer>
 
       {/* SOS Button */}
-      <div className="grid grid-cols-1 md:gap-[35rem] md:flex mt-5">
-        <h2 className="text-center font-[500] text-[20px] mb-2">For emergency, please click the SOS button</h2>
+      <div className="grid grid-cols-1  md:gap-[35rem] md:flex mt-5">
+        <h2 className="font-[500] text-[20px] mb-2">For emergency, please click the SOS button</h2>
         <button 
           onClick={handleSosClick}
           className="bg-red-600 text-center md:w-[200px] text-white py-2 px-9 rounded-full focus:outline-none hover:bg-red-700"
