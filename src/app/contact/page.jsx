@@ -6,10 +6,10 @@ export default function Contact() {
     <main className='mx-auto w-[90%] md:w-[85%]'>
       <section className='my-6'>
         <div className='mb-5 w-full py-3 text-center md:py-0 md:text-left'>
-          <h1 className='py-2 text-2xl font-bold capitalize tracking-wide md:text-4xl'>
+          <h1 className='py-2 font-popins font-[600] text-[40px] capitalize tracking-wide md:text-[40px]'>
             contact us
           </h1>
-          <span className='md:text-md text-xs font-light tracking-wider'>
+          <span className='md:text-[20px] font-manrope text-[20px] font-light tracking-wider'>
             Get in Touch We are Here to Listen, Help, and Support — Reach Out
             Today.
           </span>
@@ -24,10 +24,10 @@ export default function Contact() {
       </section>
       <section className='my-6'>
         <div className='mb-5'>
-          <h3 className='text-md font-semibold tracking-wide md:text-2xl'>
+          <h3 className='text-[30px] font-popins font-[600] tracking-wide md:text-[30px]'>
             Send us a message
           </h3>
-          <span className='text-xs font-light tracking-wider md:text-sm'>
+          <span className='text-[20px] font-manrope font-[500] tracking-wider md:text-[20px]'>
             Fill the form and our team will get back to you as quickly as we
             can.
           </span>
@@ -38,7 +38,7 @@ export default function Contact() {
             <div className='mb-5 flex flex-col md:mb-0'>
               <label
                 htmlFor='name'
-                className='mb-2 inline-block text-xs tracking-wide md:text-sm'
+                className='mb-2 font-manrope inline-block text-[20px] font-[500] tracking-wide md:text-[20px]'
               >
                 Name
               </label>
@@ -53,7 +53,7 @@ export default function Contact() {
             <div className='mb-5 flex flex-col md:mb-0'>
               <label
                 htmlFor='email'
-                className='mb-2 inline-block text-xs tracking-wide md:text-sm'
+                className='mb-2 inline-block font-manrope text-[20px] font-[500] tracking-wide md:text-[20px]'
               >
                 E-mail
               </label>
@@ -68,7 +68,7 @@ export default function Contact() {
             <div className='mb-5 flex flex-col md:mb-0'>
               <label
                 htmlFor='subject'
-                className='mb-2 inline-block text-xs tracking-wide md:text-sm'
+                className='mb-2 inline-block font-manrope text-[20px] font-[500] tracking-wide md:text-[20px]'
               >
                 Subject
               </label>
@@ -83,7 +83,7 @@ export default function Contact() {
             <div className='mb-5 flex flex-col md:mb-0'>
               <label
                 htmlFor='phone'
-                className='mb-2 inline-block text-xs tracking-wide md:text-sm'
+                className='mb-2 inline-block font-manrope text-[20px] font-[500] tracking-wide md:text-[20px]'
               >
                 Phone
               </label>
@@ -98,7 +98,7 @@ export default function Contact() {
             <div className='col-span-2 row-span-3 mb-5 flex flex-col md:mb-0'>
               <label
                 htmlFor='message'
-                className='mb-2 inline-block text-xs tracking-wide md:text-sm'
+                className='mb-2 inline-block font-manrope text-[20px] font-[500] tracking-wide md:text-[20px]'
               >
                 Message
               </label>
@@ -123,12 +123,12 @@ export default function Contact() {
                 type='radio'
                 id='agree'
               />
-              <label htmlFor='agree'>
+              <label htmlFor='agree' className='text-[20px] font-manrope font-[500] '>
                 {' '}
                 I agree to Terms of Service and Privacy Policy.
               </label>
             </div>
-            <button className='mt-2 h-[50px] w-[40%] rounded-full bg-gray-900 text-white md:mt-0 md:w-[20%]'>
+            <button className='mt-2 text-[20px] font-[500] font-manrope h-[50px] w-[40%] rounded-full bg-gray-900 text-white md:mt-0 md:w-[20%]'>
               Submit
             </button>
           </div>

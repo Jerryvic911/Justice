@@ -20,15 +20,15 @@ const Skills = () => {
     return (
         <div className=" ">
             <div>
-                <h2 className='font-[600] text-[30px]  mb-6'>Stories and News Update</h2>
+                <h2 className='font-[600] text-[30px] font-popins mb-6'>Stories and News Update</h2>
             </div>
 
             {articles.map((article, index) => (
                 <div className='flex flex-col gap-12 md:flex-row justify-between items-start mb-8' key={index}>
                     <div className='text-wrap w-full md:w-[600px]'>
-                        <h1 className='font-[600] text-[25px] leading-[37.5px] mb-2'>{article.title}</h1>
-                        <p className='font-[500] text-[16px] md:text-[20px] leading-[27.32px] mb-4'>{article.description}</p>
-                        <button className='font-[600] text-[20px] leading-[37.5px] flex items-center'>
+                        <h1 className='font-[600] text-[25px] leading-[37.5px] font-popins mb-2'>{article.title}</h1>
+                        <p className='font-[500] font-manrope text-[16px] md:text-[20px] leading-[27.32px] mb-4'>{article.description}</p>
+                        <button className='font-[600] font-popins text-[20px] leading-[37.5px] flex items-center'>
                             Read more 
                             <span className='ml-2'>&#8594;</span> 
                         </button>

@@ -19,17 +19,17 @@ function Body() {
         <div className='px-6 py-10'>
           {/* Left Section */}
           <div className='ml-3 md:ml-10'>
-            <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-snug lg:leading-normal">
-              Addressing Gender-Based Violence <br /> and Insecurity in Kaduna State.
+            <h1 className="font-bold font-manrope text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-[81px] lg:leading-normal">
+              Addressing Gender-Based Violence  and Insecurity in Kaduna State.
             </h1>
 
-            <p className='w-full text-base md:w-[38rem] md:text-lg lg:text-xl'>
+            <p className='w-full font-manrope text-base md:w-[38rem] md:text-lg lg:text-xl'>
               Kirki provides accessible tools and resources to combat
               gender-based violence, crime, and insecurity in Kaduna State. Join
               us in making our community safer.
             </p>
-            <div className='mt-2 flex gap-5 pt-5'>
-              <button className='flex h-11 w-[12rem] rounded-full bg-[#B8F171] pl-8 pt-2'>
+            <div className='mt-2 flex gap-5 pt-5 capitalize'>
+              <button className='flex font-manrope h-11 w-[12rem] capitalize rounded-full bg-[#B8F171] pl-8 pt-[8.5px]'>
                 get more help
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -46,7 +46,7 @@ function Body() {
                   />
                 </svg>
               </button>
-              <button className='flex pl-8 pt-2'>
+              <button className='flex font-manrope pl-8 pt-2 capitalize'>
                 Explore books
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -75,11 +75,11 @@ function Body() {
               />
             </div>
             <div>
-              <h1 className='pt-5 text-2xl font-[600] leading-tight md:text-3xl md:leading-snug lg:text-4xl lg:leading-normal'>
+              <h1 className='pt-5 font-popins text-2xl font-[600] leading-tight md:text-3xl md:leading-snug lg:text-4xl lg:leading-normal'>
                 Brief Overview on Kirki
               </h1>
               <div className='ml-0 mt-10 w-full md:ml-[10rem] md:w-[50rem]'>
-                <p className='text-justify text-base font-[500] md:text-lg lg:text-xl'>
+                <p className='text-justify font-manrope text-base font-[500] md:text-lg lg:text-xl'>
                   Welcome to Kirki, a platform dedicated to empowering survivors
                   of gender-based violence (GBV) and providing essential
                   resources for healing and support. Our mission is to create a
