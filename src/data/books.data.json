@@ -1,11 +1,7 @@
 [
-  { "id": 1, "title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "description": "A novel set in the Jazz Age." },
-  { "id": 2, "title": "To Kill a Mockingbird", "author": "Harper Lee", "description": "A story about racial injustice." },
-  { "id": 3, "title": "1984", "author": "George Orwell", "description": "A dystopian novel about totalitarianism." },
-  { "id": 3, "title": "1984", "author": "George Orwell", "description": "A dystopian novel about totalitarianism." },
-  { "id": 3, "title": "1984", "author": "George Orwell", "description": "A dystopian novel about totalitarianism." },
-  { "id": 3, "title": "1984", "author": "George Orwell", "description": "A dystopian novel about totalitarianism." },
-  { "id": 3, "title": "1984", "author": "George Orwell", "description": "A dystopian novel about totalitarianism." },
-  { "id": 3, "title": "1984", "author": "George Orwell", "description": "A dystopian novel about totalitarianism." },
-  { "id": 4, "title": "1955", "author": "George ", "description": "A dystopian  about totalitarianism." }
+  { "id": 1, "title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "description": "A novel set in the Jazz Age.", "language": ["English"], "topic": "Rights", "type": ["eBook"] },
+  { "id": 2, "title": "To Kill a Mockingbird", "author": "Harper Lee", "description": "A story about racial injustice.", "language": ["English"], "topic": "Rights", "type": ["eBook"] },
+  { "id": 3, "title": "1984", "author": "George Orwell", "description": "A dystopian novel about totalitarianism.", "language": ["English", "Hausa"], "topic": "Health", "type": ["Guide"] },
+  { "id": 4, "title": "1955", "author": "George ", "description": "A dystopian about totalitarianism.", "language": ["English"], "topic": "Health", "type": ["Article"] },
+  { "id": 5, "title": "The Great", "author": "Scott", "description": "A novel.", "language": ["Hausa"], "topic": "Health", "type": ["Guide"] }
 ]
