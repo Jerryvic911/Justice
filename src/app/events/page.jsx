@@ -1,11 +1,12 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import eventData from '../../data/events.data.json';
 
 export default function Events() {
   const [event] = useState(eventData);
   const router = useRouter();
+
 
   return (
     <div className='p-8'>

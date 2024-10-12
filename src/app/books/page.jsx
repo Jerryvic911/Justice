@@ -2,6 +2,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import booksData from '../../data/books.data.json';
+import Image from 'next/image';
+import Orange from "../image/Orange.jpg"
+import { useEffect } from'react';
 
 // Component for Filter Items
 const FilterItem = ({ id, label, checked, onChange }) => (
@@ -11,7 +14,7 @@ const FilterItem = ({ id, label, checked, onChange }) => (
       id={id}
       checked={checked}
       onChange={onChange}
-      className="mr-2 h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+      className="mr-2 h-5 w-5 text-black cursor-pointer rounded-full"
     />
     <label htmlFor={id} className="cursor-pointer text-gray-800 font-medium">{label}</label>
   </div>
@@ -26,9 +29,11 @@ export default function BooksPage() {
     pidgin: false,
   });
   const [topicFilters, setTopicFilters] = useState({
-    safety: false,
-    rights: false,
-    health: false,
+    "gender based violence": false,
+    "crime prevention": false,
+    security: false,
+    "legal Rights": false,
+    "mental Health": false,
   });
   const [typeFilters, setTypeFilters] = useState({
     ebook: false,
@@ -65,20 +70,23 @@ export default function BooksPage() {
   const handleTypeChange = ({ target: { id, checked } }) => {
     setTypeFilters(prev => ({ ...prev, [id]: checked }));
   };
-
-  console.log('Language Filters:', languageFilters);
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures it runs only on mount
 
   return (
     <div className="px-4 md:px-8 lg:px-16">
-      <h1 className='mb-6 text-4xl font-bold text-center'>Books List</h1>
-      <div className='mb-4 grid grid-cols-2'>
-        <h1 className='mt-5'>Filters</h1>
+      <h1 className='font-[poppins] text-3xl md:text-4xl mb-4 pt-5 font-[600]'>Books</h1>
+      <p className='font-manrope text-lg md:text-xl leading-7'>Explore a curated collection of books, guides, and articles focused on gender-based violence, crime prevention, and personal security. Empower yourself with knowledge and find practical resources that can help you stay informed, stay safe, and take action. All materials are available for download or online reading in multiple languages</p>
+      <div className='mb-4 mt-5 grid grid-cols-1 md:grid-cols-2'>
+        <h1 className='mt-5 font-popins font-[600] text-2xl'>Filters</h1>
         <input
           type='text'
-          placeholder='Search by title or author'
+          placeholder='Search'
           value={searchFilter}
           onChange={(e) => setSearchFilter(e.target.value)}
-          className='w-full rounded-md border border-gray-300 p-2 md:p-3 lg:p-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
+          className='w-full h-10 mt-5 rounded-md border border-black p-2 shadow-sm'
         />
       </div>
 
@@ -86,8 +94,8 @@ export default function BooksPage() {
         {/* Filters Section */}
         <div className="flex flex-col w-full md:w-1/4 space-y-6">
           {/* Topic Filters */}
-          <div className="bg-gray-100 p-4 rounded-lg shadow">
-            <h2 className="text-2xl font-semibold mb-2">Filter by Topic</h2>
+          <div className="bg-gray-100  capitalize p-4 rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-2">Filter by Topic</h2>
             {Object.entries(topicFilters).map(([topic, checked]) => (
               <FilterItem
                 key={topic}
@@ -99,23 +107,9 @@ export default function BooksPage() {
             ))}
           </div>
 
-          {/* Language Filters */}
-          <div className="bg-gray-100 p-4 rounded-lg shadow">
-            <h2 className="text-2xl font-semibold mb-2">Filter by Language</h2>
-            {Object.entries(languageFilters).map(([language, checked]) => (
-              <FilterItem
-                key={language}
-                id={language}
-                label={language.charAt(0).toUpperCase() + language.slice(1)}
-                checked={checked}
-                onChange={handleLanguageChange}
-              />
-            ))}
-          </div>
-
           {/* Type Filters */}
           <div className="bg-gray-100 p-4 rounded-lg shadow">
-            <h2 className="text-2xl font-semibold mb-2">Filter by Type</h2>
+            <h2 className="text-xl font-semibold mb-2">Filter by Type</h2>
             {Object.entries(typeFilters).map(([type, checked]) => (
               <FilterItem
                 key={type}
@@ -126,35 +120,57 @@ export default function BooksPage() {
               />
             ))}
           </div>
+
+          {/* Language Filters */}
+          <div className="bg-gray-100 p-4  rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-2">Filter by Language</h2>
+            {Object.entries(languageFilters).map(([language, checked]) => (
+              <FilterItem
+                key={language}
+                id={language}
+                label={language.charAt(0).toUpperCase() + language.slice(1)}
+                checked={checked}
+                onChange={handleLanguageChange}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Book Cards Section */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 pb-10 flex-1">
-          {books.filter(isBookFiltered).map(({ id, title, author, description, language, topic, type }) => (
-            <div
-              key={id}
-              className='bg-white rounded-lg border border-gray-300 p-4 shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg'
-              onClick={() => router.push(`/books/${id}`)}
-            >
-              <h2 className='mb-2 text-lg font-semibold text-blue-700'>Language: {Array.isArray(language) ? language.join(', ') : language}</h2>
-              <h2 className='mb-2 text-xl font-semibold text-blue-700'>{title}</h2>
-              <p className='text-lg text-gray-600'>
-                <strong>Author:</strong> {author}
-              </p>
-              <p className='mt-2 text-sm lg:text-base'>{description}</p>
-              <h2>Topic: {topic}</h2>
-              <h2>Type: {Array.isArray(type) ? type.join(', ') : type}</h2>
-              <div className='mt-10 grid grid-cols-2 gap-3'>
-                <button className='border-black font-semibold border-[1px] h-8 rounded-lg shadow-md'>
-                  Read Online
-                </button>
-                <button className='border-black font-semibold border-[1px] rounded-lg shadow-md'>
-                  Download
-                </button>
-              </div>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 flex-1 pb-10">
+  {books.filter(isBookFiltered).map(({ id, title, description, language, topic, type }) => (
+    <div
+      key={id}
+      className='bg-white w-full max-w-[350px] h-[530px] mx-auto rounded-lg border border-gray-300 p-4 shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg flex flex-col justify-between'
+      onClick={() => router.push(`/books/${id}`)}
+    >
+      <Image
+        src={Orange}
+        width={300}
+        height={400}
+        alt={title}
+        className='object-cover h-[19rem] w-full rounded-t-lg'
+      />
+      <div className='flex-grow p-2'>
+        <h2 className='text-xl mb-2 font-medium'>{title}</h2>
+        <p className='text-base text-gray-600 font-[500] mb-2'>{description}</p>
+        <div className='mt-3 mb-5 flex text-sm gap-3'>
+          <h2 className='text-sm font-medium'>Topic: {topic}</h2>
+          <h2 className='text-sm'>Language: {Array.isArray(language) ? language.join(', ') : language}</h2>
         </div>
+      </div>
+      <div className='grid grid-cols-2 gap-3 mt-auto'>
+        <button className='border-black font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'>
+          Read Online
+        </button>
+        <button className='border-black font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'>
+          Download
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 // Dynamically import PaystackButton with no SSR
@@ -30,6 +30,11 @@ const Donate = () => {
   };
 
   const presetAmounts = [500, 1000, 2000]; // Preset amounts in Naira
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures it runs only on mount
 
   return (
     <div className='px-4'>

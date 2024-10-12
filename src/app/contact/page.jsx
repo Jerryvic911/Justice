@@ -1,7 +1,12 @@
-import React from 'react';
+"use client"
+import React ,{ useEffect } from 'react';
 import Image from 'next/image';
 
 export default function Contact() {
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures it runs only on mount
   return (
     <main className='mx-auto w-[90%] md:w-[85%]'>
       <section className='my-6'>

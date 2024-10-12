@@ -1,7 +1,12 @@
-import React from 'react';
+"use client"
+import React, {useEffect} from 'react';
 import MapsMain from './Maps-Main';
 
 function Map() {
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures it runs only on mount
   return (
     <div className="px-4 sm:px-6 lg:px-8"> {/* Padding on all sides, responsive for different screen sizes */}
       <div className=" mb-6 md:text-pretty"> {/* Center the text and add margin at the bottom */}

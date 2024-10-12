@@ -1,6 +1,8 @@
-import React from 'react';
+"use client"
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import image from '../image/Bodyimage.png';
+
 
 const instructions = [
   {
@@ -21,6 +23,11 @@ const instructions = [
 ];
 
 export default function About() {
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures it runs only on mount
   return (
     <main className='mx-4 mt-10 max-w-7xl sm:mx-6 lg:mx-[100px]'>
       <section className='my-4'>
