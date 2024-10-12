@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
 
 // Dynamically import PaystackButton with no SSR
 const PaystackButton = dynamic(
@@ -11,7 +12,10 @@ const PaystackButton = dynamic(
 const Donate = () => {
   const publicKey = 'pk_test_e66822d2e3553a1dd1143d6dbcb609e62dbab7ac';
   const [customAmount, setCustomAmount] = useState('');
-  // Total donated amount
+
+  // State for donation count and total donated
+  const [donationCount, setDonationCount] = useState(0);
+  const [totalDonated, setTotalDonated] = useState(0);
 
   const handleSuccess = (amount) => {
     alert('Thanks for donation!');
@@ -24,8 +28,7 @@ const Donate = () => {
   };
 
   const style = {
-    input:
-      'block w-full px-4 py-2 mb-4 rounded-md border border-gray-300 focus:outline-none focus:border-primary-500',
+    input: 'block w-full px-4 py-2 mb-4 rounded-md border border-gray-300 focus:outline-none focus:border-primary-500',
     button: 'block w-full px-4 py-2 bg-[#1369A1] text-white rounded-md mb-4',
   };
 
@@ -58,7 +61,6 @@ const Donate = () => {
           onSuccess={() => handleSuccess(Number(customAmount))} // Pass the custom amount to handleSuccess
           onClose={handleClose}
         />
-
         {presetAmounts.map((amount) => (
           <PaystackButton
             key={amount}
@@ -71,8 +73,11 @@ const Donate = () => {
             onClose={handleClose}
           />
         ))}
-
         {/* Display the donation count and total donated */}
+        <div className="mt-4">
+          <p className='text-center'>Total Donations: {donationCount}</p>
+          <p className='text-center'>Total Donated: NGN {totalDonated}</p>
+        </div>
       </div>
     </div>
   );
