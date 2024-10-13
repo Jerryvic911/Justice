@@ -123,7 +123,7 @@ function Navbar() {
               key={link.id}
               className='capitalize tracking-wide transition-all delay-700 hover:underline'
             >
-              <Link href={link.url}>{link.name}</Link>
+              <Link href={link.url} onClick={() => setIsOpen(false)}>{link.name}</Link>
             </li>
           ))}
 
@@ -157,6 +157,7 @@ function Navbar() {
         >
           <Link
             href='/Donate'
+            onClick={() => setIsOpen(false)}
             className='flex h-[40px] w-[60%] items-center justify-center rounded-full border border-solid border-black bg-[#B8F171] text-black transition-colors ease-in-out md:w-1/3 md:bg-transparent md:text-black md:hover:bg-[#B8F171] md:hover:text-black'
           >
             Donate

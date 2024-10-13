@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <main className='mx-auto w-[90%] md:w-[85%]'>
       <section className='my-6'>
-        <div className='mb-5 w-full py-3 text-center md:py-0 md:text-left'>
+        <div className='mb-5 w-full py-3  md:py-0 md:text-left'>
           <h1 className='py-2 font-popins font-[600] text-[40px] capitalize tracking-wide md:text-[40px]'>
             contact us
           </h1>
