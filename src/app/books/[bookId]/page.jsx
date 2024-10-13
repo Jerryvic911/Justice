@@ -9,56 +9,34 @@ export default function BookDetails({ params }) {
   });
 
   return (
-    <main className=''>
-      <section>
-        <h1 className='mb-6 text-3xl font-bold text-gray-800'>{book.title}</h1>
-        <span className='mb-6 inline-block font-light capitalize italic'>
-          {book.author}
-        </span>
-        <p className='tracking-wider'>
-          {book.description} <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
-          elit quis sapien pharetra eleifend in vitae libero. Nulla et blandit
-          sapien. Etiam cursus tellus velit, id vestibulum ipsum mattis id.
-          Vivamus consequat mi ac ipsum bibendum, vel dignissim ante pharetra.
-          Fusce luctus est consectetur, interdum ipsum et, ultricies nisi.
-          Suspendisse nibh risus, efficitur vel luctus vitae, maximus at elit.
-          Cras accumsan libero in dolor commodo volutpat. In eget neque ut lacus
-          auctor interdum. Donec sit amet mi non magna molestie porttitor. Ut
-          sed augue ac ante tincidunt feugiat. Suspendisse blandit tristique
-          ligula, non tempor ex commodo eget. Aliquam bibendum massa tortor, sed
-          molestie massa consequat et. Donec lacus mauris, lobortis ac fringilla
-          nec, rutrum et lorem. Nam sodales placerat fermentum. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Nunc consequat semper
-          sapien, sit amet aliquet nisi consectetur quis. Quisque sit amet leo
-          ac velit finibus malesuada vestibulum et diam. Mauris vehicula enim
-          nunc. Vestibulum congue lacinia nunc vitae eleifend. Ut ornare nisl
-          eget quam iaculis facilisis. Vivamus efficitur nunc at velit dapibus,
-          non tempus tortor dictum. Curabitur nisi tortor, tempus at nibh eu,
-          venenatis commodo nisi. Sed sollicitudin dictum justo, eget semper
-          turpis condimentum a. Aenean viverra venenatis tempor. Vivamus id
-          sapien eu ante porttitor condimentum ac eleifend urna. Quisque non
-          suscipit dui. Sed sit amet aliquet dolor, et facilisis est. Nullam
-          laoreet posuere auctor. Donec nibh eros, luctus ut sapien quis, auctor
-          auctor massa. Phasellus quis justo lacus. Morbi eget vulputate ante.
-          Etiam rutrum nisl purus, eu gravida velit iaculis non. Vestibulum
-          faucibus quis justo vitae condimentum. Pellentesque in fermentum ante,
-          at interdum tortor. Sed malesuada risus nec ligula ornare, non dapibus
-          turpis interdum. Aenean orci purus, consectetur eget mauris ac,
-          porttitor eleifend urna. Sed eget bibendum nisi. Sed a efficitur mi.
-          Nulla congue ex urna, sit amet dapibus lorem sagittis et. Nullam
-          pulvinar ullamcorper tempor. Praesent auctor elit at bibendum cursus.
-          Aliquam eget feugiat felis. Etiam egestas laoreet arcu in
-          pellentesque. Maecenas condimentum, sapien quis vestibulum efficitur,
-          quam urna sodales tortor, vitae iaculis odio risus nec orci. Maecenas
-          sollicitudin, lacus eu eleifend euismod, erat libero suscipit quam,
-          eget egestas ante risus a tellus. Cras sodales ipsum libero, quis
-          vulputate massa mattis id. Donec iaculis ultricies semper. Vestibulum
-          sit amet enim facilisis, vulputate libero sit amet, cursus massa.
-          Pellentesque et odio sem. Ut varius eros nunc, et rhoncus ante
-          dignissim et. Donec et sapien fringilla, malesuada lacus et, placerat
-          erat.
+    <main className='flex flex-col mt-4 mb-6 px-4 md:px-10 lg:px-[10rem]'>
+      <div className='w-full'>
+        <h1 className='text-[28px] md:text-[35px] font-semibold mb-4'>Book Details</h1>
+      </div>
+      <section className='w-full'>
+        <h2 className='mb-4 text-[16px] md:text-[18px] font-[500] border-t border-black pt-5 flex'>
+          <span className='text-[#707070] text-[18px] md:text-[20px] font-[600] mr-2 md:mr-[14rem]'>Title:</span>
+          {book.title}
+        </h2>
+        <h2 className='mb-4 text-[16px] md:text-[18px] font-[500] capitalize border-t pt-5 flex w-full border-black'>
+          <span className='text-[#707070] text-[18px] md:text-[20px] font-[600] mr-2 md:mr-[13rem]'>Author:</span> {book.author}
+        </h2>
+        <p className='border-t border-b text-[16px] md:text-[18px] font-[500] border-black mb-4 pt-5 flex w-full pb-3'>
+          <span className='text-[#707070] text-[18px] md:text-[20px] font-[600] mr-2 md:mr-[10rem]'>Description:</span>
+          {book.description}
         </p>
+
+        <h1 className='text-[26px] md:text-[30px] font-semibold mb-4 pt-5 pb-3'>Preview</h1>
+        <div className='w-full md:w-[1000px] h-auto pt-4 bg-[#F7F4F4] px-4 md:px-9 rounded-lg'>
+          <h1 className='mb-4 text-[26px] md:text-[30px] font-[600]'>{book.preview}</h1>
+          <p className='text-justify text-[16px] md:text-[18px] font-[500] h-auto md:h-[100px]'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
+            elit quis sapien pharetra eleifend in vitae libero. Nulla et blandit
+            sapien. Etiam cursus tellus velit, id vestibulum ipsum mattis id.
+            Vivamus consequat mi ac ipsum bibendum, vel dignissim ante pharetra.
+            Fusce luctus est consectetur, interdum ipsum et, ultricies nisi.
+          </p>
+        </div>
       </section>
     </main>
   );
