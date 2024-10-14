@@ -37,6 +37,15 @@ export default function BookDetails({ params }) {
             Fusce luctus est consectetur, interdum ipsum et, ultricies nisi.
           </p>
         </div>
+        <div className='flex float-right gap-7 pl-10 pt-5'>
+  <button className='border-black font-semibold border w-28 sm:w-28 md:w-32 h-8 sm:h-9 md:h-10 rounded-lg shadow-md hover:bg-gray-100'>
+    Read Online
+  </button>
+  <button className='border-black font-semibold border w-32 sm:w-28 md:w-32 h-8 sm:h-9 md:h-10 rounded-lg shadow-md hover:bg-gray-100'>
+    Download PDF
+  </button>
+</div>
+
       </section>
     </main>
   );
