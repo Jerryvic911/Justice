@@ -1,17 +1,35 @@
 [
   {
     "id": 1,
-    "title": "The child effect",
-    "description": "A novel set in the Jazz Age."
+    "title": "Self-Defense Workshop for Women",
+    "description": "Join us for a practical self-defense workshop tailored for women. This workshop will teach basic self-defense techniques, ways to stay aware of your surroundings, and how to respond to potential threats. No previous experience is necessary.",
+    "time": ["10:00 AM"],
+    "endTime": ["1:00 PM"],
+    "date": "October 5, 2024",
+    "location": "Kaduna Women’s Center, Kaduna State",
+    "topics": ["How to de-escalate confrontations", "Personal safety tips in public spaces"],
+    "speakers": ["Amina Suleiman:Expert in Women’s Safety and Martial Arts "],
+    "speakers1": ["Fatima Musa:Community Organizer and GBV Advocate"]
   },
   {
     "id": 2,
     "title": "stop war",
-    "description": "A story about racial injustice."
+    "description": "A story about racial injustice.",
+    "time": ["3:00 PM"],
+    "endTime": ["4:00 PM"],
+    "date": "2023-10-15",
+    "location": "Room 101",
+    "topics": ["Social Justice", "Race", "Activism"],
+    "speakers": ["Alice Johnson", "Michael Brown"]
   },
   {
     "id": 3,
     "title": "funding for the abused",
-    "description": "A dystopian novel about totalitarianism."
+    "description": "A dystopian novel about totalitarianism.",
+    "time": "1:00 PM",
+    "date": "2023-10-20",
+    "location": "Conference Hall",
+    "topics": ["Dystopia", "Political Fiction", "Survival"],
+    "speakers": ["Emily Davis", "Robert Green"]
   }
 ]
