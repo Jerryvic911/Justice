@@ -20,9 +20,8 @@ export default function EventDetails({ params }) {
         </div>
         <div className='mb-4 text-[14px] md:text-[16px] lg:text-[18px] font-[500] border-t border-black pt-5 flex flex-col md:flex-row md:items-center'>
           <span className='text-[#707070] font-[600] md:mr-4'>Time:</span>
-          <span>{event.time}</span>
-          <span className='mx-2'>-</span>
-          <span>{event.endTime}</span>
+          <span>{event.time.join(" - ")}</span>
+         
         </div>
         <div className='mb-4 text-[14px] md:text-[16px] lg:text-[18px] font-[500] border-t border-black pt-5 flex flex-col md:flex-row md:items-center'>
           <span className='text-[#707070] font-[600] md:mr-4'>Location:</span>
