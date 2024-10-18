@@ -29,7 +29,7 @@ function Body() {
               gender-based violence, crime, and insecurity in Kaduna State. Join
               us in making our community safer.
             </p>
-            <div className='mt-2 flex gap-5 pt-5 capitalize'>
+            <div className='mt-2 flex flex-col md:flex-row gap-5 pt-5 capitalize'>
             <Link href='/contact'>
             <button className='flex font-manrope h-11 w-[12rem] capitalize rounded-full bg-[#B8F171] pl-8 pt-[8.5px]'>
                 get more help
