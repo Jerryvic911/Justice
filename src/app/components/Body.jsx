@@ -4,6 +4,7 @@ import Work from '../features/Work';
 import Image from 'next/image';
 import People from '../image/people.png';
 import Map from '../image/Map.png';
+import Link from 'next/link';
 
 function Body() {
   return (
@@ -29,7 +30,8 @@ function Body() {
               us in making our community safer.
             </p>
             <div className='mt-2 flex gap-5 pt-5 capitalize'>
-              <button className='flex font-manrope h-11 w-[12rem] capitalize rounded-full bg-[#B8F171] pl-8 pt-[8.5px]'>
+            <Link href='/contact'>
+            <button className='flex font-manrope h-11 w-[12rem] capitalize rounded-full bg-[#B8F171] pl-8 pt-[8.5px]'>
                 get more help
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -46,7 +48,9 @@ function Body() {
                   />
                 </svg>
               </button>
-              <button className='flex font-manrope pl-8 pt-2 capitalize'>
+            </Link>
+             <Link href='/books'>
+             <button className='flex font-manrope pl-8 pt-2 capitalize'>
                 Explore books
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -63,6 +67,7 @@ function Body() {
                   />
                 </svg>
               </button>
+             </Link>
             </div>
 
             <div>

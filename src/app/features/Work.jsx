@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Update from "./skills-and-updates";
+import Link from "next/link";
 
 
 const Work = () => {
@@ -16,7 +17,8 @@ const Work = () => {
 
           <div className="mt-10">
             <ul className="flex flex-col md:flex-row gap-10 md:gap-56">
-              <li>
+             <Link href="/books">
+             <li>
                 <button className="font-[600] font-popins text-xl md:text-2xl lg:text-3xl leading-tight md:leading-snug lg:leading-normal flex gap-4">
                   Books
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 mt-1">
@@ -27,7 +29,9 @@ const Work = () => {
                   Explore written resources on GBV
                 </h2>
               </li>
-              <li>
+             </Link>
+           <Link href="/Events">
+           <li>
                 <button className="font-[600] font-popins text-xl md:text-2xl lg:text-3xl leading-tight md:leading-snug lg:leading-normal flex gap-4">
                   Events
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 mt-1">
@@ -38,7 +42,9 @@ const Work = () => {
                   Explore latest events
                 </h2>
               </li>
-              <li>
+           </Link>
+             <Link href="/map">
+             <li>
                 <button className="font-[600] font-popins text-xl md:text-2xl lg:text-3xl leading-tight md:leading-snug lg:leading-normal flex gap-4">
                   Maps
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 mt-1">
@@ -49,6 +55,7 @@ const Work = () => {
                   Share live locations
                 </h2>
               </li>
+             </Link>
             </ul>
           </div>
 
