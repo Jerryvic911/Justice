@@ -156,7 +156,7 @@ function Navbar() {
           className={`${isOpen ? 'flex' : 'hidden'} w-full items-center justify-center md:flex md:w-1/4`}
         >
           <Link
-            href='/Donate'
+            href='/donate'
             onClick={() => setIsOpen(false)}
             className='flex h-[40px] w-[60%] items-center justify-center rounded-full border border-solid border-black bg-[#B8F171] text-black transition-colors ease-in-out md:w-1/3 md:bg-transparent md:text-black md:hover:bg-[#B8F171] md:hover:text-black'
           >
