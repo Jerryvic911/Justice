@@ -30,7 +30,7 @@ const Work = () => {
                 </h2>
               </li>
              </Link>
-           <Link href="/Events">
+           <Link href="/events">
            <li>
                 <button className="font-[600] font-popins text-xl md:text-2xl lg:text-3xl leading-tight md:leading-snug lg:leading-normal flex gap-4">
                   Events
