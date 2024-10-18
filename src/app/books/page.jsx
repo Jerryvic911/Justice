@@ -94,8 +94,8 @@ export default function BooksPage() {
         {/* Filters Section */}
         <div className="flex flex-col w-full md:w-1/4 space-y-6">
           {/* Topic Filters */}
-          <div className="bg-gray-100  capitalize p-4 rounded-lg shadow">
-            <h2 className="text-xl font-semibold mb-2">Filter by Topic</h2>
+          <div className="bg-gray-100 font-manrope capitalize p-4 rounded-lg shadow">
+            <h2 className="text-xl font-popins font-semibold mb-2">Filter by Topic</h2>
             {Object.entries(topicFilters).map(([topic, checked]) => (
               <FilterItem
                 key={topic}
@@ -108,8 +108,8 @@ export default function BooksPage() {
           </div>
 
           {/* Type Filters */}
-          <div className="bg-gray-100 p-4 rounded-lg shadow">
-            <h2 className="text-xl font-semibold mb-2">Filter by Type</h2>
+          <div className="bg-gray-100 p-4 font-manrope rounded-lg shadow">
+            <h2 className="text-xl font-popins font-semibold mb-2">Filter by Type</h2>
             {Object.entries(typeFilters).map(([type, checked]) => (
               <FilterItem
                 key={type}
@@ -122,8 +122,8 @@ export default function BooksPage() {
           </div>
 
           {/* Language Filters */}
-          <div className="bg-gray-100 p-4  rounded-lg shadow">
-            <h2 className="text-xl font-semibold mb-2">Filter by Language</h2>
+          <div className="bg-gray-100 p-4 font-manrope  rounded-lg shadow">
+            <h2 className="text-xl font-popins font-semibold mb-2">Filter by Language</h2>
             {Object.entries(languageFilters).map(([language, checked]) => (
               <FilterItem
                 key={language}
@@ -152,18 +152,18 @@ export default function BooksPage() {
         className='object-cover h-[19rem] w-full rounded-t-lg'
       />
       <div className='flex-grow p-2'>
-        <h2 className='text-xl mb-2 font-medium'>{title}</h2>
-        <p className='text-base text-gray-600 font-[500] mb-2'>{description}</p>
+        <h2 className='text-[20px] mb-2 font-medium font-popins'>{title}</h2>
+        <p className='text-base text-gray-600 font-[400] mb-2 font-manrope'>{description}</p>
         <div className='mt-3 mb-5 flex text-sm gap-3'>
-          <h2 className='text-sm font-medium'>Topic: {topic}</h2>
-          <h2 className='text-sm'>Language: {Array.isArray(language) ? language.join(', ') : language}</h2>
+          <h2 className='text-sm font-medium font-popins'>Topic: {topic}</h2>
+          <h2 className='text-sm font-popins'>Language: {Array.isArray(language) ? language.join(', ') : language}</h2>
         </div>
       </div>
       <div className='grid grid-cols-2 gap-3 mt-auto'>
-        <button className='border-black font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'>
+        <button className='border-black font-popins font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'>
           Read Online
         </button>
-        <button className='border-black font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'>
+        <button className='border-black font-popins font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'>
           Download
         </button>
       </div>

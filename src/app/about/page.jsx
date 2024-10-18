@@ -39,11 +39,8 @@ export default function About() {
             Get in Touch we are Here to Listen, Help, and Support — Reach Out Today.
           </span>
         </div>
-        <Image
-          src={image}
-          alt='about us'
-          className='h-auto w-full object-contain md:h-[400px]'
-        />
+        <div className="mt-3 border-black border-2 rounded-lg w-full h-[216px] mb-6">
+        </div>
       </section>
       <section className='my-4'>
         <h3 className='text-3xl font-popins font-semibold leading-tight capitalize pb-7'>

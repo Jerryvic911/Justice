@@ -64,7 +64,7 @@ function Navbar() {
   return (
     <>
       {/* Navbar Section */}
-      <nav className='mb-1 flex flex-col px-2 py-4 shadow md:flex-row md:justify-between md:px-6'>
+      <nav className='mb-1 flex flex-col font-manrope px-2 py-4 shadow md:flex-row md:justify-between md:px-6'>
         <div className='flex w-full items-center justify-between md:w-1/4 md:justify-start'>
           {/* Logo */}
           <Link href='/'>
@@ -84,7 +84,7 @@ function Navbar() {
                 d='M12.356 3.066a1 1 0 0 0-.712 0l-7 2.666A1 1 0 0 0 4 6.68a17.695 17.695 0 0 0 2.022 7.98 17.405 17.405 0 0 0 5.403 6.158 1 1 0 0 0 1.15 0 17.406 17.406 0 0 0 5.402-6.157A17.694 17.694 0 0 0 20 6.68a1 1 0 0 0-.644-.949l-7-2.666Z'
               />
             </svg>
-            <h1 className='inline-block text-[22px] font-medium md:text-[25px]'>
+            <h1 className='inline-block text-[22px] font-medium font-popins md:text-[25px]'>
               Kirki
             </h1>
           </Link>

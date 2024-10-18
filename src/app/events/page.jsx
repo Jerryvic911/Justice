@@ -17,7 +17,7 @@ export default function Events() {
         <div className="border-black border-2 rounded-lg w-full h-[150px] md:h-[216px] mb-6"></div>
       </div>
 
-      <h2 className='mb-4 text-xl sm:text-2xl font-bold'>Upcoming Events</h2>
+      <h2 className='mb-4 text-xl sm:text-2xl font-popins font-bold'>Upcoming Events</h2>
       <ul className='space-y-4 sm:space-y-6'>
         {event.map((event) => (
           <li
@@ -27,14 +27,14 @@ export default function Events() {
           >
             <div className='flex flex-col sm:flex-row'>
               <div className='flex flex-col pl-2 sm:pl-5 pr-2 sm:pr-5'>
-                <p className='text-[24px] sm:text-[30px] font-[500] font-manrope text-[#707070]'>{event.shortmonth}</p>
-                <h1 className='border-t w-auto border-black text-[32px] sm:text-[40px] font-[500] font-manrope'>{event.shortdate}</h1>
+                <p className='text-[24px] sm:text-[30px] font-[500] font-popins text-[#707070]'>{event.shortmonth}</p>
+                <h1 className='border-t w-auto border-black text-[32px] sm:text-[40px] font-[500] font-popins'>{event.shortdate}</h1>
               </div>
 
-              <div className="border-black border-2 rounded-lg w-full sm:w-[500px] h-[150px] sm:h-[200px] mb-4 sm:mb-6"></div>
+              <div className="border-black border-2  rounded-lg w-full sm:w-[500px] h-[150px] sm:h-[200px] mb-4 sm:mb-6"></div>
 
-              <div className='flex flex-col ml-0 sm:ml-4'>
-                <h2 className='mb-1 text-xl sm:text-2xl font-semibold capitalize'>{event.title}</h2>
+              <div className='flex flex-col ml-0 sm:ml-4 font-manrope'>
+                <h2 className='mb-1 text-xl sm:text-2xl font-semibold capitalize font-popins'>{event.title}</h2>
                 <h2 className='mb-1 text-[16px] sm:text-[20px] font-[500] text-[#707070]'>{event.location}</h2>
                 <span className='md:border-b md:border-black md:w-[30rem] pb-4 sm:pb-7 mt-1 text-[#707070] font-[500] text-[16px] sm:text-[20px]'>
                   {Array.isArray(event.time) ? event.time.join(" - ") : event.time}
