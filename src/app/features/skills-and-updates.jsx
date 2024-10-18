@@ -40,7 +40,7 @@ const Skills = () => {
                             width={500}
                             height={500}
                             alt={article.title} 
-                            className='pt-6 h-[250px] w-[400px] object-cover md:object-fit rounded-md'
+                            className='pt-5 h-[250px] w-[400px]  object-cover md:object-fit md:h-[350px] md:w-[500px] rounded-md'
                         />
                     </div>
                 </div>
