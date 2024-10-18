@@ -21,7 +21,7 @@ const links = [
   },
   {
     id: 4,
-    url: '/Events',
+    url: '/events',
     name: 'events',
   },
   {
