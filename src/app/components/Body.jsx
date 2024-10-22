@@ -16,7 +16,8 @@ function Body() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true); // Set inView to true when the element is in view
-          observer.disconnect(); // Stop observing once it comes into view
+        } else {
+          setInView(false); // Reset inView to false when the element is not in view
         }
       },
       { threshold: 0.1 } // Trigger when 10% of the element is visible
@@ -54,7 +55,7 @@ function Body() {
           <div className='ml-3 md:ml-10'>
             <motion.h1 
               initial={{ x: -100, opacity: 0 }} 
-              animate={{ x: 0, opacity: 1 }} 
+              animate={  { x: 0, opacity: 1 } } 
               transition={{ duration: 0.5 }}
               className="font-bold font-manrope text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-[81px] lg:leading-normal"
             >
@@ -74,7 +75,7 @@ function Body() {
 
             <motion.div 
               initial={{ scale: 0 }} 
-              animate={{ scale: 1 }} 
+              animate={ { scale: 1 }} 
               transition={{ duration: 1 }} 
               className='mt-2 flex flex-col md:flex-row gap-5 pt-5 capitalize'
             >
@@ -127,7 +128,7 @@ function Body() {
 
             <motion.div 
               initial={{ scale: 0 }} 
-              animate={{ scale: 1 }} 
+              animate={{ scale: 1 } } 
               transition={{ duration: 1.5 }} 
             >
               <Image
@@ -142,7 +143,7 @@ function Body() {
             <div>
               <motion.h1 
                 initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
+                animate={inView ? { opacity: 1 } : {}} 
                 transition={{ duration: 0.5 }}
                 className='pt-5 font-popins text-2xl font-[600] leading-tight md:text-3xl md:leading-snug lg:text-4xl lg:leading-normal'
               >
