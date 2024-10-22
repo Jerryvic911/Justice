@@ -40,7 +40,7 @@ const Work = () => {
         <motion.div
           initial={{ x: '-100%', opacity: 0 }} // Start off-screen to the left
           animate={inView ? { x: 0, opacity: 1 } : {}} // Slide in when in view
-          transition={{ duration: 2 }} // Animation duration
+          transition={{ duration: 1.5 }} // Animation duration
         >
 
           <div className="px-4 md:px-9">

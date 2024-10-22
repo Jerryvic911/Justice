@@ -81,7 +81,7 @@ function Body() {
               <Link href='/contact'>
                 <motion.button 
                   className='flex font-manrope h-11 w-[12rem] capitalize rounded-full bg-[#B8F171] pl-8 pt-[8.5px]'
-                  whileHover={{ scale: 1.5 }} // Scale on hover
+                  whileHover={{ scale: 1.1 }} // Scale on hover
                 >
                   get more help
                   <svg
@@ -104,7 +104,7 @@ function Body() {
               <Link href='/books'>
                 <motion.button 
                   className='flex font-manrope pl-8 pt-2 capitalize'
-                  whileHover={{ scale: 1.5 }} // Scale on hover
+                  whileHover={{ scale: 1.2 }} // Scale on hover
                 >
                   Explore books
                   <svg

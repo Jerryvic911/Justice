@@ -52,7 +52,7 @@ function Navbar() {
               className='inline-block h-8 w-8 -translate-y-1'
               initial={{ opacity: 0, y: -50 }} // Start position
               animate={{ opacity: 1, y: 0 }} // Animate to position
-              transition={{ duration: 0.8 }} // Duration
+              transition={{ duration: 0.3 }} // Duration
             >
               <path
                 strokeLinecap='round'
