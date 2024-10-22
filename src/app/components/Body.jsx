@@ -9,15 +9,15 @@ import Link from 'next/link';
 function Body() {
   return (
     <div>
-      <div className='mt-14'>
+      <div className='mt-'>
         <Image
           src={Map}
           width={300}
           height={300}
           alt='map'
-          className='relative right-[10rem] top-5 float-right ml-10 hidden object-cover md:block'
+          className='relative right-[10rem] top-5 float-right ml-14 hidden object-cover md:block'
         />
-        <div className='px-6 py-10'>
+        <div className='px-6 py-5'>
           {/* Left Section */}
           <div className='ml-3 md:ml-10'>
             <h1 className="font-bold font-manrope text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-[81px] lg:leading-normal">
