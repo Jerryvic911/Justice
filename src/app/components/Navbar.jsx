@@ -1,39 +1,15 @@
 'use client';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-// import BasicMenu from './Menu';
+import { motion } from 'framer-motion'; // Import motion from framer-motion
 
 const links = [
-  {
-    id: 1,
-    url: '/',
-    name: 'home',
-  },
-  {
-    id: 2,
-    url: '/about',
-    name: 'about',
-  },
-  {
-    id: 3,
-    url: '/books',
-    name: 'books',
-  },
-  {
-    id: 4,
-    url: '/events',
-    name: 'events',
-  },
-  {
-    id: 5,
-    url: '/contact',
-    name: 'contact',
-  },
-  {
-    id: 6,
-    url: '/map',
-    name: 'map',
-  },
+  { id: 1, url: '/', name: 'home' },
+  { id: 2, url: '/about', name: 'about' },
+  { id: 3, url: '/books', name: 'books' },
+  { id: 4, url: '/events', name: 'events' },
+  { id: 5, url: '/contact', name: 'contact' },
+  { id: 6, url: '/map', name: 'map' },
 ];
 
 function Navbar() {
@@ -67,32 +43,34 @@ function Navbar() {
       <nav className='mb-1 flex flex-col font-manrope px-2 py-4 shadow md:flex-row md:justify-between md:px-6'>
         <div className='flex w-full items-center justify-between md:w-1/4 md:justify-start'>
           {/* Logo */}
-          <Link href='/'>
-            <svg
+          <Link href='/' className='flex items-center'>
+            <motion.svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
               strokeWidth='1.5'
-              // stroke='#3b82f6'
               className='inline-block h-8 w-8 -translate-y-1'
+              initial={{ opacity: 0, y: -50 }} // Start position
+              animate={{ opacity: 1, y: 0 }} // Animate to position
+              transition={{ duration: 0.8 }} // Duration
             >
               <path
                 strokeLinecap='round'
                 strokeLinejoin='round'
                 fill='#3b82f6'
-                className='w-full object-cover'
                 d='M12.356 3.066a1 1 0 0 0-.712 0l-7 2.666A1 1 0 0 0 4 6.68a17.695 17.695 0 0 0 2.022 7.98 17.405 17.405 0 0 0 5.403 6.158 1 1 0 0 0 1.15 0 17.406 17.406 0 0 0 5.402-6.157A17.694 17.694 0 0 0 20 6.68a1 1 0 0 0-.644-.949l-7-2.666Z'
               />
-            </svg>
-            <h1 className='inline-block text-[22px] font-medium font-popins md:text-[25px]'>
+            </motion.svg>
+            <motion.h1
+              className='inline-block text-[22px] font-medium font-popins md:text-[25px]'
+              initial={{ opacity: 0, y: -50 }} // Start position
+              animate={{ opacity: 1, y: 0 }} // Animate to position
+              transition={{ duration: 0.8 }} // Duration
+            >
               Kirki
-            </h1>
+            </motion.h1>
           </Link>
 
-          {/* Hamburger Icon - only displays on small screens
-
-          I nested it within the div to make it much easier to style
-          */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className='text-blue-500 focus:outline-none md:hidden'
@@ -118,37 +96,19 @@ function Navbar() {
         <ul
           className={`${isOpen ? 'flex' : 'hidden'} flex-col items-center justify-around gap-7 py-4 text-lg font-medium md:flex md:w-1/3 md:flex-row md:py-0`}
         >
-          {links.map((link) => (
-            <li
+          {links.map((link, index) => (
+            <motion.li
               key={link.id}
               className='capitalize tracking-wide transition-all delay-700 hover:underline'
+              initial={{ opacity: 0, y: -20 }} // Start position
+              animate={isOpen ? { opacity: 1, y: -20 } : { opacity: 5, y: 6 }} // Animate to position
+              transition={{ duration: 1, delay: index * 0.2 }} // Staggered delay 
             >
-              <Link href={link.url} onClick={() => setIsOpen(false)}>{link.name}</Link>
-            </li>
+              <Link href={link.url} onClick={() => setIsOpen(false)}>
+                {link.name}
+              </Link>
+            </motion.li>
           ))}
-
-          {/**CHATBOT LINK
-
-              TODO: Remove it from Navbar and place it as a hover button on the main page.
-               */}
-          {/* <li>
-                <Link
-                  href='/Chatbot'
-                  className='flex items-center hover:underline'
-                >
-                  <svg
-                    className='mr-1 h-5 w-5'
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 640 512'
-                  >
-                    <path
-                      fill='#3b82f6'
-                      d='M320 0c17.7 0 32 14.3 32 32l0 64 120 0c39.8 0 72 32.2 72 72l0 272c0 39.8-32.2 72-72 72l-304 0c-39.8 0-72-32.2-72-72l0-272c0-39.8 32.2-72 72-72l120 0 0-64c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224l16 0 0 192-16 0c-26.5 0-48-21.5-48-48l0-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-16 0 0-192 16 0z'
-                    />
-                  </svg>
-                  Chatbot
-                </Link>
-              </li> */}
         </ul>
 
         {/* Donate Button */}
