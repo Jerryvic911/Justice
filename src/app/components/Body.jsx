@@ -53,14 +53,14 @@ function Body() {
 
         <div className='px-6 py-5'>
           <div className='ml-3 md:ml-10'>
-            <motion.h1 
+            {/* <motion.h1 
               initial={{ x: -100, opacity: 0 }} 
               animate={  { x: 0, opacity: 1 } } 
               transition={{ duration: 0.5 }}
               className="font-bold font-manrope text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-[81px] lg:leading-normal"
             >
               Addressing Gender-Based Violence and Insecurity in Kaduna State.
-            </motion.h1>
+            </motion.h1> */}
 
             <motion.p 
               initial={{ y: 20, opacity: 0 }} 
