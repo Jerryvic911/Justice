@@ -22,6 +22,8 @@ const FilterItem = ({ id, label, checked, onChange }) => (
 );
 
 export default function BooksPage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
   const [books, setBooks] = useState(booksData);
   const [searchFilter, setSearchFilter] = useState('');
   const [languageFilters, setLanguageFilters] = useState({
@@ -149,8 +151,7 @@ export default function BooksPage() {
           {/* Book Cards Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 flex-1 pb-10">
             {books.filter(isBookFiltered).map(({ id, title, description, language, topic, type }) => {
-              const ref = useRef(null);
-              const isInView = useInView(ref, { once: false }); // Check if the book is in view
+            // Check if the book is in view
 
               return (
                 <motion.div
@@ -159,9 +160,9 @@ export default function BooksPage() {
                   className='bg-white w-full max-w-[350px] h-[530px] mx-auto rounded-lg border border-gray-300 p-4 shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg flex flex-col justify-between'
                   onClick={() => router.push(`/books/${id}`)}
                   initial={{ opacity: 0, scale: 0.5, x: 100 }} // Slide in from the right
-                  animate={isInView ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.5, x: 100 }} // Animate when in view
+                  animate={ { opacity: 1, scale: 1, x: 0 } } // Animate when in view
                   exit={{ opacity: 0, scale: 1.5, x: 100 }} // Slide out to the right
-                  transition={{ duration: 1 }} // Slide-in duration
+                  transition={{ duration: 0.5 }} // Slide-in duration
                 >
                   <Image
                     src={Orange}

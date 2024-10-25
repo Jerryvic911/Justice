@@ -24,6 +24,8 @@ const instructions = [
 
 export default function About() {
   const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+  
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
@@ -81,8 +83,8 @@ export default function About() {
           
           <ul className='space-y-4 pb-9'>
             {instructions.map((instruction) => {
-              const ref = useRef(null);
-              const isInView = useInView(ref, { once: false });
+              
+
 
               return (
                 <motion.li 

@@ -5,6 +5,8 @@ import { motion, useInView } from 'framer-motion';
 import PageWrapper from '../components/PageWrapper'; // Import the PageWrapper
 
 export default function Contact() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
@@ -67,8 +69,7 @@ export default function Contact() {
           >
             <div className='grid-cols-3 grid-rows-5 gap-6 p-1 md:grid'>
               {['name', 'email', 'subject', 'phone', 'message'].map((field, idx) => {
-                const ref = useRef(null);
-                const isInView = useInView(ref, { once: false });
+               
                 const delay = idx * 0.2; // Staggered delay
 
                 return (
