@@ -1,6 +1,7 @@
 "use client"
 import { useEffect } from 'react';
 import Body from "./components/Body";
+import PageWrapper from "./components/PageWrapper";
 
 export default function Home() {
   useEffect(() => {
@@ -9,8 +10,8 @@ export default function Home() {
   }, []); // Empty dependency array ensures it runs only on mount
 
   return (
-    <div>
-      <Body />
-    </div>
+    <PageWrapper>
+          <Body />
+    </PageWrapper>
   );
 }
