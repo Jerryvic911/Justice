@@ -116,12 +116,21 @@ export default function MapsMain() {
       {/* SOS Button */}
       <div className="grid grid-cols-1 md:gap-[35rem] md:flex mt-5">
         <h2 className="font-[500] text-[20px] font-manrope mb-2">For emergency, please click the SOS button</h2>
-        <button 
+        <motion.button 
           onClick={handleSosClick}
+          animate={{ 
+            scale: [1, 1.1, 1], // Scale up to 1.1 and back to 1
+          }}
+          transition={{ 
+            duration: 0.6, // Duration of each heartbeat cycle
+            ease: "easeInOut", 
+            repeat: Infinity // Repeat the animation indefinitely
+          }}
+          whileTap={{ scale: 0.95 }} // Scale down when tapped
           className="bg-red-600 text-center md:w-[200px] font-manrope text-white py-2 px-9 rounded-full focus:outline-none hover:bg-red-700"
         >
           SOS
-        </button>
+        </motion.button>
       </div>
     </motion.div>
   );

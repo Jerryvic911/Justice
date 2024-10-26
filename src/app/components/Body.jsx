@@ -37,9 +37,9 @@ function Body() {
   return (
     <div>
       <div className='mt-'>
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           <Image
@@ -53,18 +53,18 @@ function Body() {
 
         <div className='px-6 py-5'>
           <div className='ml-3 md:ml-10'>
-            <motion.h1 
-              initial={{ x: -100, opacity: 0 }} 
-              animate={  { x: 0, opacity: 1 } } 
+            <motion.h1
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
               className="font-bold font-manrope text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-[81px] lg:leading-normal"
             >
               Addressing Gender-Based Violence and Insecurity in Kaduna State.
             </motion.h1>
 
-            <motion.p 
-              initial={{ y: 20, opacity: 0 }} 
-              animate={{ y: 0, opacity: 1 }} 
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
               className='w-full font-manrope text-base md:w-[38rem] md:text-lg lg:text-xl'
             >
@@ -73,16 +73,17 @@ function Body() {
               us in making our community safer.
             </motion.p>
 
-            <motion.div 
-              initial={{ scale: 0 }} 
-              animate={ { scale: 1 }} 
-              transition={{ duration: 1 }} 
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1 }}
               className='mt-2 flex flex-col md:flex-row gap-5 pt-5 capitalize'
             >
               <Link href='/contact'>
-                <motion.button 
+                <motion.button
                   className='flex font-manrope h-11 w-[12rem] capitalize rounded-full bg-[#B8F171] pl-8 pt-[8.5px]'
-                  whileHover={{ scale: 1.1 }} // Scale on hover
+                  whileHover={{ scale: 1.1, rotate: 5 }} // Scale and rotate on hover
+                  whileTap={{ scale: 0.95 }} // Scale down when tapped
                 >
                   get more help
                   <svg
@@ -103,9 +104,10 @@ function Body() {
               </Link>
 
               <Link href='/books'>
-                <motion.button 
+                <motion.button
                   className='flex font-manrope pl-8 pt-2 capitalize'
-                  whileHover={{ scale: 1.2 }} // Scale on hover
+                  whileHover={{ scale: 1.1, rotate: -5 }} // Scale and rotate on hover
+                  whileTap={{ scale: 0.95 }}
                 >
                   Explore books
                   <svg
@@ -126,10 +128,10 @@ function Body() {
               </Link>
             </motion.div>
 
-            <motion.div 
-              initial={{ scale: 0 }} 
-              animate={{ scale: 1 } } 
-              transition={{ duration: 1.5 }} 
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.5 }}
             >
               <Image
                 src={People}
@@ -141,17 +143,17 @@ function Body() {
             </motion.div>
 
             <div>
-              <motion.h1 
-                initial={{ opacity: 0 }} 
-                animate={inView ? { opacity: 1 } : {}} 
+              <motion.h1
+                initial={{ opacity: 0 }}
+                animate={inView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.5 }}
                 className='pt-5 font-popins text-2xl font-[600] leading-tight md:text-3xl md:leading-snug lg:text-4xl lg:leading-normal'
               >
                 Brief Overview on Kirki
               </motion.h1>
-              <motion.div 
+              <motion.div
                 ref={ref} // Attach the ref
-                initial={{ y: 20, opacity: 0 }} 
+                initial={{ y: 20, opacity: 0 }}
                 animate={inView ? { y: 0, opacity: 1 } : {}} // Animate when in view
                 transition={{ duration: 0.5 }}
                 className='ml-0 mt-10 w-full md:ml-[10rem] md:w-[50rem]'
@@ -174,9 +176,9 @@ function Body() {
         </div>
       </div>
 
-      <motion.div 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <Work />
