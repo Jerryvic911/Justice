@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 import "./Map.css";
 import emailjs from 'emailjs-com';
+import { motion } from 'framer-motion';
 
 // Dynamically import Leaflet and React-Leaflet components
 const MapContainer = dynamic(() => import("react-leaflet").then((m) => m.MapContainer), { ssr: false });
@@ -11,8 +12,15 @@ const TileLayer = dynamic(() => import("react-leaflet").then((m) => m.TileLayer)
 const Marker = dynamic(() => import("react-leaflet").then((m) => m.Marker), { ssr: false });
 const Popup = dynamic(() => import("react-leaflet").then((m) => m.Popup), { ssr: false });
 
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
 export default function MapsMain() {
   const [customIcon, setCustomIcon] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const mapRef = useRef(null);
 
   useEffect(() => {
     const setupLeafletIcon = async () => {
@@ -27,6 +35,27 @@ export default function MapsMain() {
     };
 
     setupLeafletIcon();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    if (mapRef.current) {
+      observer.observe(mapRef.current);
+    }
+
+    return () => {
+      if (mapRef.current) {
+        observer.unobserve(mapRef.current);
+      }
+    };
   }, []);
 
   const markers = [
@@ -47,7 +76,6 @@ export default function MapsMain() {
     const message = "SOS alert! I need assistance!";
     const templateParams = {
       message,
-      // You can add more parameters here if needed, like user location, etc.
     };
 
     emailjs.send('service_vuy3l4e', 'template_mz5zrpt', templateParams, '0Cboi9PJWPyZXY1G6')
@@ -61,7 +89,14 @@ export default function MapsMain() {
   };
 
   return (
-    <div className="relative w-full  mx-auto"> {/* Responsive container */}
+    <motion.div 
+      ref={mapRef} 
+      initial="hidden" 
+      animate={isVisible ? "visible" : "hidden"} 
+      variants={fadeIn} 
+      transition={{ duration: 1 }}
+      className="relative w-full mx-auto"
+    >
       <MapContainer center={[10.5105, 7.4165]} zoom={12} style={{ height: "400px", width: "100%" }}>
         <TileLayer
           attribution="Google Maps"
@@ -79,7 +114,7 @@ export default function MapsMain() {
       </MapContainer>
 
       {/* SOS Button */}
-      <div className="grid grid-cols-1  md:gap-[35rem] md:flex mt-5">
+      <div className="grid grid-cols-1 md:gap-[35rem] md:flex mt-5">
         <h2 className="font-[500] text-[20px] font-manrope mb-2">For emergency, please click the SOS button</h2>
         <button 
           onClick={handleSosClick}
@@ -88,6 +123,6 @@ export default function MapsMain() {
           SOS
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
