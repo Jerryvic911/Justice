@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect , useRef} from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import booksData from '../../data/books.data.json';
 import Image from 'next/image';
@@ -79,12 +79,23 @@ export default function BooksPage() {
     window.scrollTo(0, 0);
   }, []); // Empty dependency array ensures it runs only on mount
 
+  const handleDownload = (url) => {
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', '');
+    link.setAttribute('target', '_blank');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  
+
   return (
     <PageWrapper> {/* Wrap the content with PageWrapper */}
       <div className="px-4 md:px-8 lg:px-16">
         <h1 className='font-[poppins] text-3xl md:text-4xl mb-4 pt-5 font-[600]'>Books</h1>
         <p className='font-manrope text-lg md:text-xl leading-7'>Explore a curated collection of books, guides, and articles focused on gender-based violence, crime prevention, and personal security. Empower yourself with knowledge and find practical resources that can help you stay informed, stay safe, and take action. All materials are available for download or online reading in multiple languages</p>
-        
+
         <div className='mb-4 mt-5 grid grid-cols-1 md:grid-cols-2'>
           <h1 className='mt-5 font-popins font-[600] text-2xl'>Filters</h1>
           <input
@@ -150,17 +161,17 @@ export default function BooksPage() {
 
           {/* Book Cards Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 flex-1 pb-10">
-            {books.filter(isBookFiltered).map(({ id, title, description, language, topic, type }) => {
-            // Check if the book is in view
+            {books.filter(isBookFiltered).map(({ id, title, description, language, topic, downloadUrl, ReadmoreUrl }) => {
+              // Check if the book is in view
 
               return (
                 <motion.div
                   ref={ref} // Attach the ref
                   key={id}
                   className='bg-white w-full max-w-[350px] h-[530px] mx-auto rounded-lg border border-gray-300 p-4 shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg flex flex-col justify-between'
-                  onClick={() => router.push(`/books/${id}`)}
+                  // onClick={() => router.push(`/books/${id}`)}
                   initial={{ opacity: 0, scale: 0.5, x: 100 }} // Slide in from the right
-                  animate={ { opacity: 1, scale: 1, x: 0 } } // Animate when in view
+                  animate={{ opacity: 1, scale: 1, x: 0 }} // Animate when in view
                   exit={{ opacity: 0, scale: 1.5, x: 100 }} // Slide out to the right
                   transition={{ duration: 0.5 }} // Slide-in duration
                 >
@@ -180,12 +191,20 @@ export default function BooksPage() {
                     </div>
                   </div>
                   <div className='grid grid-cols-2 gap-3 mt-auto'>
-                    <button className='border-black font-popins font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'>
+                    <a href={ReadmoreUrl}
+                    target='_blank'
+                    className='border-black pl-6 pt-1 font-popins font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'>
                       Read Online
-                    </button>
-                    <button className='border-black font-popins font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'>
+                    </a>
+                    <a
+                      href={downloadUrl}
+                      className='border-black pl-8 pt-1  font-popins font-semibold border h-8 rounded-lg shadow-md hover:bg-gray-100'
+                      download // This triggers the download
+                      target="_blank" // Optional: opens in a new tab
+                      rel="noopener noreferrer" // Security for opening in new tabs
+                    >
                       Download
-                    </button>
+                    </a>
                   </div>
                 </motion.div>
               );
